@@ -1,0 +1,391 @@
+/*
+  PROJEM Linkbio — estilos principais
+  Direção visual: mobile first, técnico, limpo e com contraste real.
+  A página mantém o fundo escuro premium, mas os balões foram simplificados:
+  sem brilho, sem relevo exagerado, sem caixa nos ícones e sem animação nos cards.
+*/
+
+:root {
+  --bg: #030303;
+  --bg-soft: #090909;
+  --white: #ffffff;
+  --muted: rgba(255, 255, 255, 0.66);
+  --muted-soft: rgba(255, 255, 255, 0.42);
+
+  --yellow: #f4bf00;
+  --yellow-border: #ffd22e;
+  --yellow-dark: #d8a700;
+
+  --ink: #050505;
+  --ink-soft: rgba(5, 5, 5, 0.66);
+
+  --card-radius: 18px;
+  --transition: 180ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 52% 8%, rgba(244, 191, 0, 0.14), transparent 27%),
+    radial-gradient(circle at 5% 88%, rgba(244, 191, 0, 0.06), transparent 25%),
+    linear-gradient(145deg, #000 0%, var(--bg) 55%, var(--bg-soft) 100%);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+/* Fundo animado discreto. Ele não interfere na leitura dos botões. */
+.animated-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.energy-line {
+  position: absolute;
+  width: 320px;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(244, 191, 0, 0.52), rgba(255, 255, 255, 0.48), transparent);
+  filter: blur(10px);
+  opacity: 0;
+  transform: rotate(-24deg);
+  animation: energyMove 9s linear infinite;
+}
+
+.line-one {
+  top: 22%;
+  left: -52%;
+  animation-delay: 0s;
+}
+
+.line-two {
+  top: 54%;
+  left: -62%;
+  animation-delay: 3.2s;
+  animation-duration: 10.5s;
+}
+
+.line-three {
+  top: 78%;
+  left: -58%;
+  animation-delay: 6s;
+  animation-duration: 11.4s;
+}
+
+.energy-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(244, 191, 0, 0.15);
+  filter: blur(105px);
+  opacity: 0.22;
+  animation: glowPulse 7s ease-in-out infinite alternate;
+}
+
+.glow-one {
+  top: -145px;
+  right: -150px;
+}
+
+.glow-two {
+  bottom: -165px;
+  left: -155px;
+  animation-delay: 2s;
+}
+
+/* Container principal. A largura foi pensada para linkbio em celular. */
+.linkbio {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 430px);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: max(30px, env(safe-area-inset-top)) 22px max(26px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-card {
+  text-align: center;
+  padding: 6px 8px 14px;
+  animation: fadeUp 620ms ease both;
+}
+
+.logo-frame {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #050505;
+  border: 2px solid var(--yellow-border);
+  box-shadow:
+    0 18px 52px rgba(0, 0, 0, 0.46),
+    0 0 0 8px rgba(244, 191, 0, 0.07),
+    0 0 34px rgba(244, 191, 0, 0.18);
+  overflow: hidden;
+}
+
+.brand-logo {
+  width: 98px;
+  height: 98px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-kicker {
+  margin: 0 0 6px;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.34em;
+  color: var(--yellow-border);
+  text-transform: uppercase;
+}
+
+.brand-card h1 {
+  margin: 0;
+  font-size: clamp(1.66rem, 7.6vw, 2.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.brand-subtitle {
+  max-width: 310px;
+  margin: 12px auto 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Lista com mais respiro. Os cards não possuem brilho ou decoração interna. */
+.links-list {
+  display: grid;
+  gap: 17px;
+  margin-top: 28px;
+}
+
+.link-balloon {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  min-height: 72px;
+  padding: 16px 20px;
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: var(--card-radius);
+  border: 1px solid var(--yellow-dark);
+  background: var(--yellow);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.26);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.link-balloon:hover,
+.link-balloon:focus-visible {
+  background: var(--yellow-border);
+}
+
+.link-balloon:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.92);
+  outline-offset: 4px;
+}
+
+.link-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+}
+
+.link-icon svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+  fill: var(--ink);
+  shape-rendering: geometricPrecision;
+}
+
+.link-copy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  text-align: left;
+}
+
+.link-copy strong {
+  color: var(--ink);
+  font-size: 0.96rem;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.link-copy small {
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.footer {
+  margin-top: 34px;
+  padding: 12px 8px 0;
+  text-align: center;
+  color: var(--muted-soft);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  animation: fadeUp 620ms ease both;
+  animation-delay: 180ms;
+}
+
+.footer small {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.32);
+}
+
+@keyframes energyMove {
+  0% {
+    opacity: 0;
+    transform: translate3d(-18vw, 0, 0) rotate(-24deg) scaleX(0.62);
+  }
+  18% {
+    opacity: 0.22;
+  }
+  48% {
+    opacity: 0.42;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(154vw, -22vh, 0) rotate(-24deg) scaleX(1.35);
+  }
+}
+
+@keyframes glowPulse {
+  from {
+    transform: scale(0.94);
+    opacity: 0.16;
+  }
+  to {
+    transform: scale(1.07);
+    opacity: 0.26;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Refinamento para celulares muito estreitos. */
+@media (max-width: 380px) {
+  .linkbio {
+    padding-inline: 18px;
+  }
+
+  .logo-frame {
+    width: 122px;
+    height: 122px;
+    margin-bottom: 16px;
+  }
+
+  .brand-logo {
+    width: 92px;
+    height: 92px;
+  }
+
+  .brand-card h1 {
+    font-size: 1.52rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .links-list {
+    gap: 15px;
+    margin-top: 24px;
+  }
+
+  .link-balloon {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 14px;
+    min-height: 68px;
+    padding: 15px 17px;
+    border-radius: 17px;
+  }
+
+  .link-icon,
+  .link-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .link-copy strong {
+    font-size: 0.9rem;
+  }
+
+  .link-copy small {
+    font-size: 0.68rem;
+  }
+}
+
+/* Em telas maiores, o linkbio continua com proporção de tela mobile. */
+@media (min-width: 760px) {
+  .linkbio {
+    width: min(100%, 448px);
+    padding-top: 44px;
+    padding-bottom: 34px;
+  }
+
+  .logo-frame {
+    width: 138px;
+    height: 138px;
+  }
+
+  .brand-logo {
+    width: 104px;
+    height: 104px;
+  }
+}
+
+/* Acessibilidade: reduz animações para usuários que preferem menos movimento. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+.by-por{
+  font-size: 8px;
+}

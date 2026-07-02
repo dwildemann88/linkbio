@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <!--
+    Linkbio PROJEM Engenharia Elétrica
+    Projeto estático em HTML + CSS + JavaScript puro.
+
+    Ajuste desta versão:
+    - foco em mobile;
+    - balões amarelos mais limpos, sem efeitos decorativos;
+    - ícones pretos à esquerda, sem borda e sem caixa;
+    - descrições curtas para leitura rápida;
+    - mais espaçamento vertical entre os balões;
+    - logo com borda amarela no topo.
+  -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#050505" />
+
+  <title>PROJEM Engenharia Elétrica | Links</title>
+  <meta name="description" content="Linkbio oficial da PROJEM Engenharia Elétrica: WhatsApp técnico, site oficial e portfólio de projetos." />
+
+  <!-- Fonte Poppins. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Favicon com o símbolo da PROJEM. -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <!-- Estilos principais. -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Fundo animado discreto. Os elementos são puramente decorativos. -->
+  <div class="animated-background" aria-hidden="true">
+    <span class="energy-line line-one"></span>
+    <span class="energy-line line-two"></span>
+    <span class="energy-line line-three"></span>
+    <span class="energy-glow glow-one"></span>
+    <span class="energy-glow glow-two"></span>
+  </div>
+
+  <main class="linkbio" aria-label="Links principais da PROJEM Engenharia Elétrica">
+    <!-- Cabeçalho da marca. -->
+    <section class="brand-card" aria-labelledby="brand-title">
+      <div class="logo-frame">
+        <!-- Para trocar a logo, substitua assets/logo-projem-simbolo.png mantendo o mesmo nome. -->
+        <img src="assets/logo-projem-simbolo.png" alt="Símbolo da PROJEM" class="brand-logo" />
+      </div>
+
+      <p class="brand-kicker">PROJEM</p>
+      <h1 id="brand-title">Engenharia Elétrica</h1>
+      <p class="brand-subtitle">Soluções técnicas em energia, projetos e engenharia.</p>
+    </section>
+
+    <!-- Lista de links. Cada bloco inteiro é clicável para facilitar o toque no celular. -->
+    <nav class="links-list" aria-label="Lista de links da PROJEM">
+      <a class="link-balloon" href="https://wa.me/555584710193" target="_blank" rel="noopener noreferrer" aria-label="Fale com um engenheiro pelo WhatsApp">
+        <span class="link-icon" aria-hidden="true">
+          <!-- WhatsApp oficial em SVG inline para manter nitidez. -->
+          <svg viewBox="0 0 24 24" role="img" focusable="false">
+            <path d="M12.04 2C6.57 2 2.13 6.43 2.13 11.89c0 1.75.46 3.45 1.34 4.95L2 22l5.29-1.38a9.88 9.88 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.43 9.9-9.89C21.95 6.43 17.51 2 12.04 2Zm.01 18.15h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.14.82.84-3.06-.2-.31a8.17 8.17 0 1 1 6.99 3.87Zm4.48-6.12c-.25-.12-1.47-.72-1.69-.8-.23-.09-.4-.12-.56.12-.16.25-.65.8-.8.97-.15.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.16 1.73 2.64 4.2 3.7.59.25 1.04.41 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.47-.29Z" />
+          </svg>
+        </span>
+        <span class="link-copy">
+          <strong>Fale com um engenheiro</strong>
+          <small>WhatsApp técnico</small>
+        </span>
+      </a>
+
+      <a class="link-balloon" href="https://projem.com.br" target="_blank" rel="noopener noreferrer" aria-label="Visite o site da PROJEM">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" focusable="false">
+            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.93 6h-3.08a15.7 15.7 0 0 0-1.24-3.06A8.04 8.04 0 0 1 18.93 8ZM12 4.05c.62.9 1.32 2.18 1.74 3.95h-3.48c.42-1.77 1.12-3.05 1.74-3.95ZM4.26 14a8.28 8.28 0 0 1 0-4h3.48a17 17 0 0 0 0 4H4.26Zm.81 2h3.08c.3 1.15.72 2.2 1.24 3.06A8.04 8.04 0 0 1 5.07 16Zm3.08-8H5.07a8.04 8.04 0 0 1 4.32-3.06A15.7 15.7 0 0 0 8.15 8ZM12 19.95c-.62-.9-1.32-2.18-1.74-3.95h3.48c-.42 1.77-1.12 3.05-1.74 3.95ZM14.17 14H9.83a14.57 14.57 0 0 1 0-4h4.34a14.57 14.57 0 0 1 0 4Zm.44 5.06A15.7 15.7 0 0 0 15.85 16h3.08a8.04 8.04 0 0 1-4.32 3.06ZM16.26 14a17 17 0 0 0 0-4h3.48a8.28 8.28 0 0 1 0 4h-3.48Z" />
+          </svg>
+        </span>
+        <span class="link-copy">
+          <strong>Visite nosso site</strong>
+          <small>Site oficial</small>
+        </span>
+      </a>
+
+      <a class="link-balloon" href="https://projetos.projem.com.br" target="_blank" rel="noopener noreferrer" aria-label="Veja nossos projetos">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" focusable="false">
+            <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65a.5.5 0 0 0 .12-.64l-2-3.46a.5.5 0 0 0-.6-.22l-2.49 1a7.4 7.4 0 0 0-1.69-.98L14.5 2.42A.5.5 0 0 0 14 2h-4a.5.5 0 0 0-.49.42L9.12 5.07c-.6.23-1.17.56-1.69.98l-2.49-1a.5.5 0 0 0-.6.22l-2 3.46a.5.5 0 0 0 .12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65a.5.5 0 0 0-.12.64l2 3.46c.13.23.4.32.6.22l2.49-1c.52.4 1.08.73 1.69.98l.39 2.65c.04.24.25.42.49.42h4c.24 0 .45-.18.49-.42l.39-2.65a7.4 7.4 0 0 0 1.69-.98l2.49 1c.23.09.48 0 .6-.22l2-3.46a.5.5 0 0 0-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7Z" />
+          </svg>
+        </span>
+        <span class="link-copy">
+          <strong>Nossos projetos</strong>
+          <small>Portfólio</small>
+        </span>
+      </a>
+    </nav>
+
+    <!-- Rodapé simples. O ano é preenchido automaticamente pelo JavaScript. -->
+    <footer class="footer">
+      <span>© <span id="year"></span> PROJEM Engenharia Elétrica</span>
+      <small>Energia com projeto.</small>
+      <small class="by-por">feito por Daniel Wildemann</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
